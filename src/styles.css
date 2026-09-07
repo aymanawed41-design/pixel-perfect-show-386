@@ -264,7 +264,7 @@
 }
 
 /* ---- premium title slide ---- */
-.deck-title-wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+.deck-title-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
 .deck-eyebrow { font-family: "Cairo", sans-serif; font-weight: 700; color: var(--deck-grey); font-size: 15px; margin-bottom: 16px; }
 .deck-title-h1 { font-size: clamp(30px, 5vw, 62px); font-weight: 900; line-height: 1.25; margin: 0 0 18px; }
 .deck-title-h1 em { font-style: normal; color: var(--deck-green); }
@@ -279,7 +279,7 @@
   border: 2px solid var(--deck-green-tint); border-radius: 28px; z-index: 0;
 }
 .deck-portrait {
-  position: relative; z-index: 1; width: 100%; border-radius: 28px;
+  position: relative; z-index: 1; width: 100%; max-height: 46vh; border-radius: 28px;
   background: linear-gradient(180deg, var(--deck-green-tint), var(--deck-paper-off));
   box-shadow: var(--deck-shadow); display: block; object-fit: cover;
 }
@@ -287,7 +287,7 @@
   margin-top: 22px; padding: 14px 18px; border: 1px solid var(--deck-line);
   border-radius: 16px; background: var(--deck-paper); box-shadow: var(--deck-shadow);
 }
-.deck-logos img { width: 100%; display: block; border-radius: 8px; }
+.deck-logos img { width: 100%; max-height: 20vh; object-fit: contain; display: block; }
 .deck-logos-label {
   font-family: "Cairo", sans-serif; font-size: 12px; font-weight: 700;
   color: var(--deck-grey); letter-spacing: .06em; margin-bottom: 10px;

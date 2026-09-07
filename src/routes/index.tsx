@@ -58,19 +58,22 @@ function Deck() {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const i = refs.current.indexOf(e.target as HTMLDivElement);
-            if (i >= 0) setCurrent(i);
-          }
-        });
-      },
-      { threshold: 0.5 },
-    );
-    refs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
+    const onScroll = () => {
+      let best = 0;
+      let bestTop = Infinity;
+      refs.current.forEach((el, i) => {
+        if (!el) return;
+        const top = Math.abs(el.getBoundingClientRect().top);
+        if (top < bestTop) {
+          bestTop = top;
+          best = i;
+        }
+      });
+      setCurrent(best);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
