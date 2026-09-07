@@ -366,7 +366,6 @@ function Deck() {
 
   return (
     <div className="deck-root" dir="rtl" lang="ar">
-      <h1 className="sr-only">جلسة تعريفية — هندسة القوى والآلات الكهربية، جامعة المنصورة</h1>
       {slides.map((s, i) => (
         <div
           key={i}
